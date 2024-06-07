@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.css">
+  <style>
+    .mb-4{
+      text-align: center;
+    }
+    
+    body {
+      background-color: #bab0d2;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.731);
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .table thead th {
+      background-color: #533678;
+      color: #ffffff;
+    }
+    .table tbody tr:nth-child(even) {
+      background-color: #f0ecec;
+    }
+    .btn-custom {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">C-R-U-D</h1>
+
+    <form id="userForm">
+      <input type="hidden" id="userId">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nombre">Nombre/s</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="ap">Apellidos</label>
+          <input type="text" class="form-control" id="ap" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="correo">Correo</label>
+          <input type="text" id="correo" class="form-control" disabled>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="cel">Teléfono</label>
+          <input type="text" class="form-control" id="cel" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="matricula">Matrícula</label>
+          <input type="text" class="form-control" id="matricula" required disabled>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="materia">Materia</label>
+          <input type="text" class="form-control" id="materia" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="grupo">Grupo</label>
+          <input type="text" class="form-control" id="grupo" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <button type="button" class="btn btn-primary btn-custom" id="inser">Insertar</button>
+          <button type="button" class="btn btn-success btn-custom" id="Edit">Actualizar</button>
+          <button type="button" class="btn btn-info btn-custom" id="consu">Consultar</button>
+          <button type="button" class="btn btn-secondary btn-custom" id="limpiar">Limpiar</button>
+        </div>
+      </div>
+    </form>
+    
+    <table class="table table-bordered mt-4">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Matrícula</th>
+          <th>Materia</th>
+          <th>Grupo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tbUsuarios">
+      </tbody>
+    </table>
+  </div>
+
+  <script type="module" src="insert.js"></script>
+</body>
+</html>
